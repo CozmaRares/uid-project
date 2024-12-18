@@ -5,10 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "format": "prettier --write ."
+    "build": "pnpm run lint && tsc -b && vite build",
+    "format": "prettier --write .",
+    "deploy:domain": "echo uid.raru.dev > ./dist/CNAME",
+    "deploy:pages": "gh-pages -d dist",
+    "deploy": "pnpm run build && pnpm run deploy:domain && pnpm run deploy:pages"
   },
   "dependencies": {
     "@tanstack/react-router": "^1.91.2",
@@ -32,6 +34,7 @@
     "eslint": "^9.15.0",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.14",
+    "gh-pages": "^6.2.0",
     "globals": "^15.12.0",
     "postcss": "^8.4.49",
     "prettier-plugin-tailwindcss": "^0.6.9",
