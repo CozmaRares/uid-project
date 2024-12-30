@@ -10,7 +10,7 @@
     "format": "prettier --write .",
     "deploy:domain": "echo uid.raru.dev > ./dist/CNAME",
     "deploy:pages": "gh-pages -d dist",
-    "deploy": "pnpm run build && pnpm run deploy:domain && pnpm run deploy:pages"
+    "deploy": "npm run build && npm run deploy:domain && npm run deploy:pages"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
@@ -27,7 +27,6 @@
     "@tanstack/react-router": "^1.91.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "date-fns": "^4.1.0",
     "lucide-react": "^0.468.0",
     "react": "^18.3.1",
     "react-day-picker": "8.10.1",
