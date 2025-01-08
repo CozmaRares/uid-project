@@ -78,7 +78,7 @@ function RouteComponent() {
                 </div>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
                   <Users className="h-4 w-4" />
-                  <span>24 participants</span>
+                  <span>{activity.participants} participants</span>
                 </div>
               </div>
             </CardContent>
