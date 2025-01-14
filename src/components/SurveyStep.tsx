@@ -90,6 +90,10 @@ export default function SurveyStep({
         {step.description && (
           <p className="text-muted-foreground">{step.description}</p>
         )}
+        <div className="text-sm text-muted-foreground">
+          Required fields are marked with{" "}
+          <span className="text-secondary">*</span>
+        </div>
       </div>
       {step.questions.map(questionComponent)}
     </div>

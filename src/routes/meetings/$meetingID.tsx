@@ -90,7 +90,7 @@ type ChatProps = {
 
 function Chat({ status, messages }: ChatProps) {
   return (
-    <div className="relative max-h-[400px] rounded-lg border bg-background p-2 lg:max-h-full">
+    <div className="relative max-h-[400px] min-h-[150px] rounded-lg border bg-background p-2 lg:max-h-full">
       {status === 'upcoming' ? (
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 space-y-4 text-center">
           <p>Chat is not available yet</p>
@@ -153,7 +153,7 @@ function ChatInput({ status, onSubmit }: ChatInputProps) {
           onSubmit(data)
           form.reset()
         })}
-        className="flex space-x-2"
+        className="flex space-x-2 row-start-3 lg:row-start-2"
       >
         <FormField
           control={form.control}

@@ -19,6 +19,7 @@ import { Input } from "@/components/ui/input";
 import { ChevronFirst, Search, Send } from "lucide-react";
 import { cn, formatDateWithHour } from "@/lib/utils";
 import { Chat, YOU, chats } from "@/lib/data/chats";
+import { toast } from "sonner";
 
 export const Route = createFileRoute("/messages/")({
   component: RouteComponent,
@@ -228,6 +229,7 @@ function ChatWindow({ name, trigger }: ChatWindowProps) {
 
   const handleSendMessage = (e: React.FormEvent) => {
     e.preventDefault();
+    if (newMessage.length === 0) return toast.error("Message cannot be empty");
     setNewMessage("");
   };
 
